@@ -35,6 +35,7 @@ struct ListView: View {
                 }
                 .listStyle(.plain)
                 
+                // MARK: Navigating to the BookView screen
                 NavigationLink(destination: AddBookView(vm: vm)) {
                     Text("Új könyv hozzáadása")
                         .frame(height: 40)

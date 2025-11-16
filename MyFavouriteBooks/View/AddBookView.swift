@@ -20,7 +20,7 @@ struct AddBookView: View {
         NavigationStack {
             ZStack (alignment: .bottom) {
                 Form {
-                    Section(header: Text("Könvy adatai")) {
+                    Section(header: Text("Könyv adatai")) {
                         TextField("Cím", text: $title)
                         .textInputAutocapitalization(.sentences)
                         
@@ -30,9 +30,13 @@ struct AddBookView: View {
                         TextField("Leírás", text: $description)
                             .textInputAutocapitalization(.sentences)
                         TextField("Kép URL", text: $coverUrl)
+                        
+                        
                     }
+
                 }
                 .navigationTitle("Könyv hozzáadása")
+                
                 
                     Button {
                         let newBook = Book(
@@ -64,6 +68,10 @@ struct AddBookView: View {
     func canBeSaved() -> Bool {
         return title.count > 1 && author.count > 1 &&
         description.count > 1 && coverUrl.count > 1
+    }
+    
+    func isEnoughDataForSaving() -> Bool {
+        return !title.isEmpty && !author.isEmpty && !description.isEmpty && !coverUrl.isEmpty
     }
 }
  

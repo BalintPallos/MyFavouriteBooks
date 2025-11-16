@@ -40,10 +40,12 @@ class BookViewModel : ObservableObject {
             }
         }
     
-    func deleteBook(at offsets: IndexSet) {
-        books.remove(atOffsets: offsets)
-        saveBooks()
-    }
+        // MARK: Delete book
+    
+        func deleteBook(at offsets: IndexSet) {
+            books.remove(atOffsets: offsets)
+            saveBooks()
+        }
         
         // MARK: Cheking if the title contains a polidrome word
         func checkIfPolidrome(for book: Book) -> Bool {
